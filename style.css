@@ -104,7 +104,18 @@ body{
     border-radius: 10px;
     height: 80px;
     width: 80px;
-    
+}
+
+.selectedDate{
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background-color: #662983;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
 }
 
 .dateText{

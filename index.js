@@ -4,6 +4,8 @@ const monthYear = document.getElementById('monthYear');
 let year = new Date().getFullYear();
 let month = new Date().getMonth();
 
+let selectedDay = null;
+
 updateCalandar();
 
 function prevMonth() {
@@ -84,7 +86,7 @@ function updateCalandar() {
     }
 
     for (i = 1; i <= monthLength; i++) {
-        dates.innerHTML += `<div id="${i}" class="date">
+        dates.innerHTML += `<div id="${i}" class="date" onclick="selectDay('${i}')">
                                 <p class="dateText">${i}</p>
                              </div>`;
         console.log(i);
@@ -92,4 +94,17 @@ function updateCalandar() {
 
     monthYear.textContent = `${monthNames[month]} ${year}`;
 
+}
+
+function selectDay(id) {
+
+    const prevSelectedDay = selectedDay;
+
+    selectedDay = document.getElementById(`${id}`);
+
+    prevSelectedDay.classList.remove("selectedDate");
+    prevSelectedDay.classList.add("date");
+
+    selectedDay.classList.add("selectedDate");
+    selectedDay.classList.remove("date");
 }
