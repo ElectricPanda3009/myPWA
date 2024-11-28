@@ -1,0 +1,132 @@
+body{
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#titleBar{
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    width: 100%;
+}
+
+#title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+#accountBtn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #333;
+    color: White;
+    border: none;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+#calandar{
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700PX;
+}
+
+#calandarHeader{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+}
+
+.day{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.monthBtn{
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.date{
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background-color: #a0447f;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.dateBlank{
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    height: 80px;
+    width: 80px;
+    
+}
+
+.dateText{
+    margin: 5px;
+}
+
+#controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.controlBtns{
+    background-color: #a0447f;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 20px;
+    cursor: pointer;
+    width: 200px;
+    height: 75px;
+    border: 2px solid white;
+    border-radius: 15px;
+}
