@@ -1,10 +1,43 @@
-const dates = document.getElementById('dates');
-const monthYear = document.getElementById('monthYear');
+const dates = document.getElementById("dates");
+const monthYear = document.getElementById("monthYear");
+const openAddEventModalButtons = document.querySelectorAll("[data-add-event-modal-target]");
+const closeAddEventModalButtons = document.querySelectorAll("[data-close-add-event-modal]");
+const openModifyEventsModalButtons = document.querySelectorAll("[data-modify-events-modal-target]");
+const closeModifyEventsModalButtons = document.querySelectorAll("[data-close-modify-events-modal]");
+const overlay = document.getElementById("overlay");
 
 let year = new Date().getFullYear();
 let month = new Date().getMonth();
 
 let selectedDay = null;
+
+openAddEventModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modal = document.querySelector(button.dataset.addEventModalTarget);
+        openModal(modal);
+    })
+});
+
+closeAddEventModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        let modal = button.closest(".addEventModal");
+        closeModal(modal);
+    })
+});
+
+openModifyEventsModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modal = document.querySelector(button.dataset.modifyEventsModalTarget);
+        openModal(modal);
+    })
+});
+
+closeModifyEventsModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        let modal = button.closest(".modifyEventsModal");
+        closeModal(modal);
+    })
+});
 
 updateCalandar();
 
@@ -102,9 +135,34 @@ function selectDay(id) {
 
     selectedDay = document.getElementById(`${id}`);
 
-    prevSelectedDay.classList.remove("selectedDate");
-    prevSelectedDay.classList.add("date");
+    if (selectedDay != prevSelectedDay && selectedDay != null) {
 
-    selectedDay.classList.add("selectedDate");
-    selectedDay.classList.remove("date");
+        prevSelectedDay.classList.remove("selectedDate");
+        prevSelectedDay.classList.add("date");
+
+        selectedDay.classList.add("selectedDate");
+        selectedDay.classList.remove("date");
+
+    } else {
+
+        selectedDay.classList.remove("selectedDate");
+        selectedDay.classList.add("date");
+
+        selectedDay = null;
+
+    }
+}
+
+function openModal(modal) {
+
+    if (modal == null) return;
+    modal.classList.add("active");
+    overlay.classList.add("active");
+}
+
+function closeModal(modal) {
+
+    if (modal == null) return;
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
 }

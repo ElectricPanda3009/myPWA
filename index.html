@@ -29,15 +29,36 @@
                     <div class="day">S</div>
                 </div>
                 <div id="dates">
-                    
+                    <!--  Javascipt-generated dates go here  -->
                 </div>
 
                 <div id="controls">
-                    <button class="controlBtns" id="addEventBtn" onclick="addEvent()">Add Event</button>
-                    <button class="controlBtns" id="modifyEventBtn" onclick="modifyEvent()">Modify Events</button>
+                    <button data-add-event-modal-target="#addEventModal" class="controlBtns" id="addEventBtn">Add Event</button>
+                    <button data-modify-events-modal-target="#modifyEventsModal" class="controlBtns" id="modifyEventBtn">Modify Events</button>
                 </div>
             </div>
         </div>
+
+        <div class="addEventModal" id="addEventModal">
+            <div class="addEventModalHeader">
+                <div class="addEventTitle">Add Event</div>
+                <button data-close-add-event-modal class="closeAddEventModal">&times;</button>
+            </div>
+            <div class="addEventModalBody">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda magni repellat amet maiores perferendis ex impedit quia provident corrupti ratione odio ab recusandae eveniet porro, obcaecati est? Sint error fugit mollitia quo accusamus ratione eius nesciunt quos recusandae qui ducimus doloremque dolores obcaecati veniam, facilis soluta laudantium aliquid consectetur tempora minima aut praesentium ipsa porro animi? Quae magnam earum, praesentium tempora eius voluptatum voluptatibus vero culpa dolores! Obcaecati laudantium omnis similique recusandae nisi asperiores provident, voluptas eaque, saepe voluptatibus vero.
+            </div>
+        </div>
+
+        <div class="modifyEventsModal" id="modifyEventsModal">
+            <div class="modifyEventsModalHeader">
+                <div class="modifyEventsTitle">Modify Events</div>
+                <button data-close-modify-events-modal class="closeModifyEventsModal">&times;</button>
+            </div>
+            <div class="modifyEventsModalBody">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda magni repellat amet maiores perferendis ex impedit quia provident corrupti ratione odio ab recusandae eveniet porro, obcaecati est? Sint error fugit mollitia quo accusamus ratione eius nesciunt quos recusandae qui ducimus doloremque dolores obcaecati veniam, facilis soluta laudantium aliquid consectetur tempora minima aut praesentium ipsa porro animi? Quae magnam earum, praesentium tempora eius voluptatum voluptatibus vero culpa dolores! Obcaecati laudantium omnis similique recusandae nisi asperiores provident, voluptas eaque, saepe voluptatibus vero.
+            </div>
+        </div>
+        <div id="overlay"></div>
         
 
         <script src="index.js"></script>

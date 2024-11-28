@@ -140,4 +140,74 @@ body{
     height: 75px;
     border: 2px solid white;
     border-radius: 15px;
+    transition: background-color 0.15s;
+}
+
+.controlBtns:hover{
+    background-color: #c5589d;
+}
+
+
+.addEventModal, .modifyEventsModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid white;
+    border-radius: 20px;
+    z-index: 10;
+    background-color: #333;
+    width: 500px;
+    max-width: 80%;
+}
+
+.addEventModal.active, .modifyEventsModal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.addEventModalHeader, .modifyEventsModalHeader{
+    padding: 10px 15px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addEventModalHeader .addEventTitle, .modifyEventsModalHeader .modifyEventsTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.addEventModalHeader .closeAddEventModal, .modifyEventsModalHeader .closeModifyEventsModal{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.addEventModalBody, .modifyEventsModalBody{
+    padding: 10px 15px;
+    color: white;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000c0;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
 }
