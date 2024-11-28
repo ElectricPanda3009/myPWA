@@ -8,13 +8,14 @@ const overlay = document.getElementById("overlay");
 
 let year = new Date().getFullYear();
 let month = new Date().getMonth();
+let selectedDate = null;
 
 let selectedDay = null;
 
 openAddEventModalButtons.forEach(button => {
     button.addEventListener("click", () => {
         const modal = document.querySelector(button.dataset.addEventModalTarget);
-        openModal(modal);
+        openModal(modal, "add");
     })
 });
 
@@ -28,7 +29,7 @@ closeAddEventModalButtons.forEach(button => {
 openModifyEventsModalButtons.forEach(button => {
     button.addEventListener("click", () => {
         const modal = document.querySelector(button.dataset.modifyEventsModalTarget);
-        openModal(modal);
+        openModal(modal, "modify");
     })
 });
 
@@ -131,33 +132,35 @@ function updateCalandar() {
 
 function selectDay(id) {
 
+    selectedDate = [id, month, year];
+
     const prevSelectedDay = selectedDay;
 
     selectedDay = document.getElementById(`${id}`);
 
-    if (selectedDay != prevSelectedDay && selectedDay != null) {
 
-        prevSelectedDay.classList.remove("selectedDate");
-        prevSelectedDay.classList.add("date");
+    prevSelectedDay.classList.remove("selectedDate");
+    prevSelectedDay.classList.add("date");
 
-        selectedDay.classList.add("selectedDate");
-        selectedDay.classList.remove("date");
-
-    } else {
-
-        selectedDay.classList.remove("selectedDate");
-        selectedDay.classList.add("date");
-
-        selectedDay = null;
-
-    }
+    selectedDay.classList.add("selectedDate");
+    selectedDay.classList.remove("date");
 }
 
-function openModal(modal) {
+function openModal(modal, type) {
 
     if (modal == null) return;
     modal.classList.add("active");
     overlay.classList.add("active");
+
+    if (type == "add") {
+        const addEventTitle = document.getElementById("addEventTitle")
+        addEventTitle.textContent = `Add Event to ${selectedDate[0]}/${selectedDate[1] + 1}/${selectedDate[2]}`;
+    }
+
+    if (type == "modify") {
+        const modifyEventsTitle = document.getElementById("modifyEventsTitle")
+        modifyEventsTitle.textContent = `Modify Events for ${selectedDate[0]}/${selectedDate[1] + 1}/${selectedDate[2]}`;
+    }
 }
 
 function closeModal(modal) {
