@@ -5,6 +5,9 @@ const closeAddEventModalButtons = document.querySelectorAll("[data-close-add-eve
 const openModifyEventsModalButtons = document.querySelectorAll("[data-modify-events-modal-target]");
 const closeModifyEventsModalButtons = document.querySelectorAll("[data-close-modify-events-modal]");
 const overlay = document.getElementById("overlay");
+const addEventInputs = [document.getElementById("addEventName"),
+                        document.getElementById("addEventTime"),
+                        document.getElementById("addEventLocation")];
 
 let year = new Date().getFullYear();
 let month = new Date().getMonth();
@@ -168,4 +171,10 @@ function closeModal(modal) {
     if (modal == null) return;
     modal.classList.remove("active");
     overlay.classList.remove("active");
+}
+
+function addEvent() {
+
+    selectedDay.innerHTML += "<p class='eventText'>test event</p>"
+    closeModal(document.getElementById("addEventModal"));
 }

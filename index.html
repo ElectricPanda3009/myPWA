@@ -42,22 +42,22 @@
         <div class="addEventModal" id="addEventModal">
             <div class="addEventModalHeader">
                 <div class="addEventTitle" id="addEventTitle">Add Event</div>
-                <button data-close-add-event-modal class="closeAddEventModal">&times;</button>
+                <button data-close-add-event-modal class="closeAddEventModal" onclick="cancelAddEvent()">&times;</button>
             </div>
             <div class="addEventModalBody">
                 <div id="addEventEventNameSection" class="addEventSection">
                     <p>Event Name: </p>
-                    <input type="text" class="addEventInput">
+                    <input type="text" class="addEventInput" id="addEventName">
                 </div>
                 <div id="addEventEventTimeSection" class="addEventSection">
                     <p>Event Time: </p>
-                    <input type="text" class="addEventInput">
+                    <input type="text" class="addEventInput" id="addEventTime">
                 </div>
                 <div id="addEventEventLocationSection" class="addEventSection">
                     <p>Event Location: </p>
-                    <input type="text" class="addEventInput">
+                    <input type="text" class="addEventInput" id="addEventLocation">
                 </div>
-                <button id="addEventSubmitButton">Submit</button>
+                <button id="addEventSubmitButton" onclick="addEvent()">Submit</button>
             </div>
         </div>
 

@@ -252,3 +252,9 @@ body{
 #addEventSubmitButton:hover{
     background-color: #c5589d;
 }
+
+.eventText{
+    font-size: 0.75em;
+    font-weight: normal;
+    padding: 5px;
+}
