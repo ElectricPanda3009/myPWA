@@ -234,3 +234,21 @@ body{
     padding: 5px;
     font-size: 1.25rem;
 }
+
+#addEventSubmitButton{
+    background-color: #a0447f;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    transition: background-color 0.15s;
+    width: 100%;
+}
+
+#addEventSubmitButton:hover{
+    background-color: #c5589d;
+}
