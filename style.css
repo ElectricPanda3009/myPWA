@@ -215,3 +215,22 @@ body{
     pointer-events: all;
     opacity: 1;
 }
+
+.addEventSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.addEventInput{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    font-size: 1.25rem;
+}

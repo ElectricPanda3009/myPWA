@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="titleBar">
-            <h1 id="title">Calandar</h1>
+            <h1 id="title">Calendar</h1>
             <button id="accountBtn" onclick="accountDropdown()">Account</button>
         </div>
 
@@ -45,7 +45,18 @@
                 <button data-close-add-event-modal class="closeAddEventModal">&times;</button>
             </div>
             <div class="addEventModalBody">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda magni repellat amet maiores perferendis ex impedit quia provident corrupti ratione odio ab recusandae eveniet porro, obcaecati est? Sint error fugit mollitia quo accusamus ratione eius nesciunt quos recusandae qui ducimus doloremque dolores obcaecati veniam, facilis soluta laudantium aliquid consectetur tempora minima aut praesentium ipsa porro animi? Quae magnam earum, praesentium tempora eius voluptatum voluptatibus vero culpa dolores! Obcaecati laudantium omnis similique recusandae nisi asperiores provident, voluptas eaque, saepe voluptatibus vero.
+                <div id="addEventEventNameSection" class="addEventSection">
+                    <p>Event Name: </p>
+                    <input type="text" class="addEventInput">
+                </div>
+                <div id="addEventEventTimeSection" class="addEventSection">
+                    <p>Event Time: </p>
+                    <input type="text" class="addEventInput">
+                </div>
+                <div id="addEventEventLocationSection" class="addEventSection">
+                    <p>Event Location: </p>
+                    <input type="text" class="addEventInput">
+                </div>
             </div>
         </div>
 
