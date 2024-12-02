@@ -256,5 +256,8 @@ body{
 .eventText{
     font-size: 0.75em;
     font-weight: normal;
-    padding: 5px;
+    padding: 5px 0px;
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
